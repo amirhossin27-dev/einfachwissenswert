@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<section class="hero">
+  <img class="deko deko-zweig" src="{{ '/assets/img/deko-zweig.png' | relative_url }}" alt="">
+  <img class="deko deko-ahorn" src="{{ '/assets/img/deko-ahorn.png' | relative_url }}" alt="">
+  <img class="deko deko-blatt" src="{{ '/assets/img/deko-blatt.png' | relative_url }}" alt="">
+  <div class="wrap">
+    <div class="pill-row centered"><span class="pill">Wusstest du?</span></div>
+    <h1>Einfach wissenswert</h1>
+    <p class="sub">Aha-Wissen aus Alltag und Natur</p>
+    <p class="script">Kleine Aha-Momente ♡</p>
+    <p class="lead">Warum werden Blätter bunt? Warum weinen wir beim Zwiebelschneiden? Hier findest du jede Woche neue Antworten, geprüft und verständlich erklärt.</p>
+    <div class="chips">{% for k in site.kategorien %}<a class="chip" href="{{ '/' | append: k.slug | append: '/' | relative_url }}">{{ k.name }}</a>{% endfor %}</div>
+  </div>
+</section>
+<div class="divider"><img src="{{ '/assets/img/spross.png' | relative_url }}" alt=""></div>
+<section class="wrap">
+  <h2 class="section-title">Neueste Artikel</h2>
+  <div class="grid">{% for p in site.posts limit: 9 %}{% include card.html post=p %}{% endfor %}</div>
+</section>

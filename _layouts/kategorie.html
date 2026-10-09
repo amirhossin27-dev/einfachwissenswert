@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{% assign kat = site.kategorien | where: 'slug', page.kategorie | first %}
+<section class="wrap page-head">
+  <div class="pill-row centered"><span class="pill">Kategorie</span></div>
+  <h1>{{ kat.name }}</h1>
+  <p class="lead">{{ page.description }}</p>
+</section>
+<section class="wrap">
+  {% assign posts = site.posts | where: 'kategorie', page.kategorie %}
+  {% if posts.size > 0 %}
+  <div class="grid">{% for p in posts %}{% include card.html post=p %}{% endfor %}</div>
+  {% else %}<p class="muted">Hier erscheinen bald die ersten Artikel.</p>{% endif %}
+</section>

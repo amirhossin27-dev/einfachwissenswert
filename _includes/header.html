@@ -1,0 +1,9 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/logo.png' | relative_url }}" alt="" width="146" height="137">einfach wissenswert</a>
+    <nav class="nav">
+      {% for k in site.kategorien %}<a href="{{ '/' | append: k.slug | append: '/' | relative_url }}">{{ k.name }}</a>{% endfor %}
+      <a href="{{ '/ueber/' | relative_url }}">Über</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,25 @@
+title: einfach wissenswert
+tagline: Aha-Wissen aus Alltag und Natur, einfach erklärt.
+description: Warum werden Blätter bunt? Warum weinen wir beim Zwiebelschneiden? Jede Woche neue Antworten auf die kleinen Fragen aus Alltag, Natur und Wissenschaft.
+lang: de_DE
+url: ""        # wird gesetzt, sobald die Adresse feststeht
+baseurl: ""
+instagram: einfachwissenswert
+permalink: /:title/
+timezone: Europe/Berlin
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+kategorien:
+  - slug: alltag
+    name: Alltag
+  - slug: natur
+    name: Natur
+  - slug: aha-wissen
+    name: Aha-Wissen
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - tools

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% assign kat = site.kategorien | where: 'slug', page.kategorie | first %}
+<article class="post wrap narrow">
+  <header class="post-head">
+    <div class="pill-row centered"><a class="pill" href="{{ '/' | append: kat.slug | append: '/' | relative_url }}">{{ kat.name }}</a></div>
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date | date: '%d.%m.%Y' }} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} Min. Lesezeit</p>
+  </header>
+  {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+  {% if page.image %}<img class="cover" src="{{ page.image | relative_url }}" alt="" width="1200" height="630">{% endif %}
+  <div class="content">{{ content }}</div>
+  {% if page.quellen %}
+  <aside class="sources">
+    <h2>Quellen</h2>
+    <ul>{% for q in page.quellen %}<li><a href="{{ q.url }}" rel="noopener">{{ q.titel }}</a></li>{% endfor %}</ul>
+  </aside>
+  {% endif %}
+</article>
+{% assign related = site.posts | where: 'kategorie', page.kategorie | where_exp: 'p', 'p.url != page.url' %}
+{% if related.size > 0 %}
+<section class="wrap related">
+  <h2>Mehr aus {{ kat.name }}</h2>
+  <div class="grid">{% for p in related limit: 3 %}{% include card.html post=p %}{% endfor %}</div>
+</section>
+{% endif %}
