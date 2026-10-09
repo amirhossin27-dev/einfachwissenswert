@@ -2,8 +2,8 @@ title: einfach wissenswert
 tagline: Aha-Wissen aus Alltag und Natur, einfach erklärt.
 description: Warum werden Blätter bunt? Warum weinen wir beim Zwiebelschneiden? Jede Woche neue Antworten auf die kleinen Fragen aus Alltag, Natur und Wissenschaft.
 lang: de_DE
-url: ""        # wird gesetzt, sobald die Adresse feststeht
-baseurl: ""
+url: "https://amirhossin27-dev.github.io"
+baseurl: "/einfachwissenswert"
 instagram: einfachwissenswert
 permalink: /:title/
 timezone: Europe/Berlin
